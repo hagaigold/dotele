@@ -11,13 +11,15 @@ packages:
           main: ""
           runtime: nodejs:18
           web: true
-          webSecure: false
+          webSecure: true
           parameters: {}
           environment: {}
           annotations: {}
           limits: {}
         - name: bye
           runtime: nodejs:18
+          web: true
+          webSecure: true
 
 environment:
   TEST_STAM: ${STAM}
