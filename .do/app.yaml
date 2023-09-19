@@ -1,0 +1,29 @@
+alerts:
+- rule: DEPLOYMENT_FAILED
+- rule: DOMAIN_FAILED
+name: dotele-app
+features:
+- buildpack-stack=ubuntu-22
+functions:
+- git:
+    branch: main
+    repo_clone_url: https://github.com/hagaigold/dotele
+  name: dotele-api
+  routes:
+  - path: /api
+  source_dir: /
+static_sites:
+- environment_slug: html
+  build_command: npm run build:digitalocean
+  #build_command: ./build.sh
+  envs:
+  - key: FUNCTION_API_URL
+    scope: BUILD_TIME
+    value: ${dotele-api.PUBLIC_URL}
+  git:
+    branch: main
+    repo_clone_url: https://github.com/hagaigold/dotele
+  name: dotele-ui
+  output_dir: dist/client
+  routes:
+  - path: /

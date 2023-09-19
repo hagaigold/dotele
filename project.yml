@@ -1,23 +1,8 @@
 parameters: {}
 packages:
-    - name: sample
+    - name: v1
       shared: false
-      environment: {}
-      parameters: {}
-      annotations: {}
       functions:
-        - name: hello
-          binary: false
-          main: ""
+        - name: telefunc
           runtime: nodejs:18
-          web: true
-          parameters: {}
-          environment: {}
-          annotations: {}
-          limits: {}
-        - name: bye
-          runtime: nodejs:18
-          web: true
-
-environment:
-  TEST_STAM: ${STAM}
+          web: raw

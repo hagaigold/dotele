@@ -1,0 +1,8 @@
+{
+  "name": "telefunc",
+  "main": "index.js",
+  "dependencies": {
+    "telefunc": "0.1.60"
+  },
+  "type": "module"
+}
