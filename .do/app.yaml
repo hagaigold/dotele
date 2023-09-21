@@ -16,10 +16,10 @@ static_sites:
 - environment_slug: html
   build_command: npm run build:digitalocean
   #build_command: ./build.sh
-  envs:
-  - key: FUNCTION_API_URL
-    scope: BUILD_TIME
-    value: ${dotele-api.PUBLIC_URL}
+  # envs:
+  # - key: FUNCTION_API_URL
+  #   scope: BUILD_TIME
+  #   value: ${dotele-api.PUBLIC_URL}
   git:
     branch: main
     repo_clone_url: https://github.com/hagaigold/dotele

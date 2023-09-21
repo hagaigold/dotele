@@ -1,17 +1,18 @@
 {
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vite build --ssr",
+    "build": "vite build && vite build --ssr && npm run build:lib:clean && npm run build:lib",
+    "build:lib:clean": "rm -rf lib/dist/ && cd lib && mkdir dist",
+    "build:lib": "cp -r dist/server/ lib/dist/server/",
     "build:client": "vite build",
     "build:digitalocean": "npm ci && npm run build:client",
-    "preview": "npm run build && vite preview",
-    "test_pre": "vite preview"
+    "preview": "npm run build && vite preview"
   },
   "engines": {
     "node": "18.x"
   },
   "dependencies": {
-    "telefunc": "0.1.60",
+    "telefunc": "0.1.61",
     "vite": "^4.3.9"
   },
   "type": "module",

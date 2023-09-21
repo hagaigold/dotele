@@ -1,8 +1,14 @@
 parameters: {}
 packages:
-    - name: v1
-      shared: false
-      functions:
-        - name: telefunc
-          runtime: nodejs:18
-          web: raw
+  - name: v1
+    shared: false
+    functions:
+      - name: telefunc
+        runtime: nodejs:18
+        web: raw
+  - name: v2
+    shared: false
+    functions:
+      - name: telefunc
+        runtime: nodejs:18
+        web: raw

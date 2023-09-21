@@ -3,27 +3,18 @@ import path from 'path'
 import {fileURLToPath} from 'url'
 
 import { telefunc, config } from 'telefunc'
-//import { createRequire } from 'module'
+import { createRequire } from 'module'
 
 process.env.NODE_ENV = 'production'
-
-// manual import (if needed) https://github.com/brillout/vite-plugin-import-build#manual-import
-//import './packages/sample/hello/importBuild.cjs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-console.log('__start')
-
-config.disableNamingConvention = true
-{
-  //const require = createRequire(import.meta.url)
-    config.telefuncFiles = [path.join(__dirname , 'hello.telefunc.mjs')]
-}
-
-console.log('__end')
-
-
+// config.disableNamingConvention = true
+// {
+//   const require = createRequire(import.meta.url)
+//   config.telefuncFiles = [require.resolve('./hello.v1.telefunc.mjs')]
+// }
 
 const app = express()
 
